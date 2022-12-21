@@ -11,12 +11,11 @@ namespace MockHttpClientSample.Test
     {
         private readonly UtilityService _utilityService;
         private readonly Mock<IHttpClientFactory> _httpClientFactoryMock = new();
-        private readonly Mock<ILogger<UtilityService>> _loggerMock = new();
         private readonly MockHttpMessageHandler _httpMessageHandler = new();
 
         public UtilityServiceTest()
         {
-            _utilityService = new UtilityService(_httpClientFactoryMock.Object, _loggerMock.Object);
+            _utilityService = new UtilityService(_httpClientFactoryMock.Object);
         }
 
         [Fact]
